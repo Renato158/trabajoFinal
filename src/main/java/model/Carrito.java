@@ -16,7 +16,7 @@ public class Carrito {
 	
 	public Carrito(int id) {
 		this._id = id;
-		this.productos = new ArrayList();
+		this.productos = new ArrayList<ProductoCarrito>();
 	}
 
 	public int getId() {

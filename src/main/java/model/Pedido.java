@@ -16,7 +16,7 @@ public class Pedido {
 	public Pedido(int _id, int idUsuario, double total, String fecha) {
 		this._id = _id;
 		this.idUsuario = idUsuario;
-		this.productos = new ArrayList();
+		this.productos = new ArrayList<ProductoCarrito>();
 		this.total = total;
 		this.fecha = fecha;
 	}

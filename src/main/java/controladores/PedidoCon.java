@@ -14,7 +14,6 @@ import com.mongodb.client.MongoDatabase;
 
 import model.Carrito;
 import model.Conexion;
-import model.Domicilio;
 import model.Pedido;
 import model.Producto;
 import model.Usuario;
@@ -107,7 +106,6 @@ public class PedidoCon {
 	private static Pedido createPedido() {
 		
 		MongoCollection<Document> usuario = database.getCollection("usuario");
-		MongoCollection<Document> domicilio = database.getCollection("domicilio");
 		MongoCollection<Document> carrito = database.getCollection("carrito");
 		
 		FindIterable<Document> conUsuario = usuario.find(new BasicDBObject("_id", 1));
@@ -117,13 +115,6 @@ public class PedidoCon {
     	
     	
     	Usuario u = gson.fromJson(listUsuario.get(0), Usuario.class);
-		
-    	FindIterable<Document> conDomicilio = domicilio.find(new BasicDBObject("_id", 1));
-    	
-		List<String> listDomicilio = new ArrayList<String>();
-    	conDomicilio.forEach(names -> listDomicilio.add(names.toJson()));
-
-    	Domicilio d = gson.fromJson(listDomicilio.get(0), Domicilio.class);
     	
     	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 1));
     	

@@ -2,7 +2,6 @@ package controladores;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import org.bson.Document;
 
@@ -15,7 +14,6 @@ import com.mongodb.client.MongoDatabase;
 import model.Carrito;
 import model.Conexion;
 import model.Producto;
-import model.Usuario;
 
 public class CarritoCon {
 	
