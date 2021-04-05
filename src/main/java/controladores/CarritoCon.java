@@ -77,12 +77,26 @@ public class CarritoCon {
     	
     	Double total = 0.0;
     	List<String> datosCarrito = CarritoCon.getDatosCarrito();
-		
-
-    	Producto p1 = gson.fromJson(datosCarrito.get(0), Producto.class);
-    	Producto p2 = gson.fromJson(datosCarrito.get(1), Producto.class);
     	
-    	total = p1.getPrecio() + p2.getPrecio();
+    	MongoCollection<Document> carrito = database.getCollection("carrito");
+    	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 1));
+    	
+		List<String> listCarrito = new ArrayList<String>();
+    	conCarrito.forEach(names -> listCarrito.add(names.toJson()));
+
+    	Carrito c = gson.fromJson(listCarrito.get(0), Carrito.class);
+    	
+    	for(int i = 0; i < datosCarrito.size(); i++) {
+    		
+        	Producto p = gson.fromJson(datosCarrito.get(i), Producto.class);
+        	
+        	double precio = p.getPrecio();
+        	
+        	int cantidad = c.getProductos().get(i).getCantidad();
+        	
+        	total += precio*cantidad;
+        	
+    	}
     	
 		return total;
 	}

@@ -65,7 +65,7 @@ public class OrdenCon {
 		
 		MongoCollection<Document> usuario = database.getCollection("usuario");
 		MongoCollection<Document> domicilio = database.getCollection("domicilio");
-		MongoCollection<Document> carrito = database.getCollection("domicilio");
+		MongoCollection<Document> carrito = database.getCollection("carrito");
 		
 		FindIterable<Document> conUsuario = usuario.find(new BasicDBObject("_id", 1));
 		
