@@ -82,7 +82,7 @@ public class OrdenCon {
 
     	Domicilio d = gson.fromJson(listDomicilio.get(0), Domicilio.class);
     	
-    	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 1));
+    	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 2));
     	
 		List<String> listCarrito = new ArrayList<String>();
     	conCarrito.forEach(names -> listCarrito.add(names.toJson()));

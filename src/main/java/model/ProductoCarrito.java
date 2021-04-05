@@ -2,20 +2,20 @@ package model;
 
 public class ProductoCarrito {
 	
-	private int idProducto;
+	private int _id;
 	private int cantidad;
 	
 	public ProductoCarrito(int id, int cantidad) {
-		this.idProducto = id;
+		this._id = id;
 		this.cantidad = cantidad;
 	}
 
 	public int getId() {
-		return idProducto;
+		return _id;
 	}
 
 	public void setId(int id) {
-		this.idProducto = id;
+		this._id = id;
 	}
 
 	public int getCantidad() {
@@ -28,7 +28,7 @@ public class ProductoCarrito {
 	
     @Override
     public String toString() {
-        return "Productos{" + "idProducto=" + idProducto + ", cantidad=" + cantidad + '}';
+        return "productos{" + "idProducto=" + _id + ", cantidad=" + cantidad + '}';
     }
 	
 	

@@ -31,7 +31,7 @@ public class CarritoCon {
     public static List<String> getDatosCarrito() {
     	
 		BasicDBObject filtro = new BasicDBObject();
-    	filtro.put("_id", 1);
+    	filtro.put("_id", 2);
     	
     	FindIterable<Document> cur = carrito.find(filtro);
     	
@@ -77,7 +77,7 @@ public class CarritoCon {
     	List<String> datosCarrito = CarritoCon.getDatosCarrito();
     	
     	MongoCollection<Document> carrito = database.getCollection("carrito");
-    	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 1));
+    	FindIterable<Document> conCarrito = carrito.find(new BasicDBObject("_id", 2));
     	
 		List<String> listCarrito = new ArrayList<String>();
     	conCarrito.forEach(names -> listCarrito.add(names.toJson()));
